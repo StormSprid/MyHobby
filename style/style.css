@@ -2,7 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #2D3250;
+    color:white;
 }
 header {
     background: #333;
@@ -10,10 +11,17 @@ header {
     padding: 15px;
     text-align: center;
 }
+.header-nav{
+    position: sticky;
+    top:0;
+    z-index: 1000;
+    background-color: #2D3250;
+}
 nav {
-    background: #555;
+    background: #676f9d;
     padding: 10px;
     text-align: center;
+
 }
 nav a {
     color: white;
@@ -28,12 +36,22 @@ nav a:hover {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background: white;
+    background: #424769;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+h1{
+    padding: 10px;
+}
 h2 {
-    color: #333;
+    color: #F9b17a;
+}
+p{
+    width: 50%;
+    background: #676f9d;
+    padding: 10px;
+    border-radius: 10px;
+    margin:0 auto;
 }
 .content{
     display: flex;
@@ -63,3 +81,24 @@ h2 {
     margin-right: 10px;
 }
 
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    grid-template-rows: repeat(2, auto); /* 2 строки */
+    gap: 10px; /* Отступы между фото */
+    max-width: 400px; /* Ограничение ширины */
+    margin: auto; /* Центрирование */
+    transform: translateX(35px);
+}
+
+.grid-container img {
+    width: 200px; /* Фото заполняет ячейку */
+    height: 140px; /* Автоматическая высота */
+    border-radius: 10px; /* Закругленные углы (по желанию) */
+}
+</style>
