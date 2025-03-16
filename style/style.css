@@ -98,15 +98,40 @@ p{
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 колонки */
-    grid-template-rows: repeat(2, auto); /* 2 строки */
+    grid-template-rows: repeat(2, 1fr); /* 2 строки */
     gap: 10px; /* Отступы между фото */
-    max-width: 400px; /* Ограничение ширины */
+    max-width: 420px; /* Чуть шире, чтобы учесть gap */
     margin: auto; /* Центрирование */
-    transform: translateX(35px);
+    transform: translateX(35px); /* Отодвинуть на 35px вправо */
+    height: 300px; /* Общая высота */
+    position: relative;
 }
 
 .grid-container img {
-    width: 200px; /* Фото заполняет ячейку */
-    height: 140px; /* Автоматическая высота */
-    border-radius: 10px; /* Закругленные углы (по желанию) */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
 }
+
+.grid-container:hover img {
+    opacity: 0.3; /* Затемняет все */
+    transform: scale(0.9);
+}
+
+.grid-container img:hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    grid-column: unset; /* Убираем grid-контроль */
+    grid-row: unset;
+    opacity: 1;
+    transform: scale(1);
+    z-index: 10;
+    border-radius: 15px;
+}
+
+
